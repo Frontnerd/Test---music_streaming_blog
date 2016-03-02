@@ -1,0 +1,142 @@
+@import 'reset.scss';
+@import 'definitions.scss';
+@import 'utilities.scss';
+@import 'typography.scss';
+@import 'player.scss';
+
+///* CUSTOM */
+///* ------------------------------------------------------------ */
+
+body{  
+  background: url( $pattern ) repeat 0 0 white;  
+  background: url('https://ia801002.us.archive.org/14/items/MemeroMemero-Hardware-Softcore-Live-Set/MEMERO_STUDIO.GIF') repeat 0 0 fixed $color;  
+  background-size: 100%;
+}
+
+a, h2 {
+  background: black;
+}
+
+.container {
+  @include size(null, null, 0 auto);
+  //max-width: $player-width;
+  > .site header,
+  .social-links {
+    @include clearfix;
+    font-size: $font-size + 10;
+    li {
+      float: left;
+      margin: 0 10px 0 0;
+    }    
+  }
+  > .site > header {
+    @include size(null, null, $unit/4);
+    h1 {
+      float: left;
+      width: 100px + $unit;
+      a {
+        img {
+          width: 100px;
+        }
+      }
+    }
+  }
+  .releases-navigation {
+    li {
+      a {
+        span {
+          //float: right;
+        }
+      }
+    }
+  }
+  .releases {
+    @include clearfix;    
+    .release {
+      @include clearfix;
+      float: left;
+      background: $color;
+      @include size(300px, 300px, $unit/4);
+      @include out-flow(relative);
+      overflow: hidden;
+      @include transition;
+      
+      h1 {
+        text-align: center;
+        @include out-flow(absolute, 0, null, 0, null, 3);
+        @include size(null, null, auto);
+      }
+      
+      $sides: 1%;
+
+      
+      header {
+        .cover {
+          width: 100%;
+        }
+        .download-link {
+          @include out-flow(absolute, 0, null, null, 0, 3);
+          @include size(100%, 100%);
+          background: hsla(0, 0%,   0%, 0);
+        }
+      }
+      .title {
+        
+      }
+      
+      
+      .title,
+      footer {
+        display: none;
+        @include size(100%, 100%);
+        @include out-flow(absolute, 0, null, null, 0, 4);
+      }
+      
+      box-shadow: 0 0 10px black;
+      &:hover {
+        box-shadow: 0 0 2px black;
+        .title,
+        .download-link,
+        footer {
+          display: block;
+        }
+        .download-link {
+          @include transition;
+          background: hsla(0, 0%,   0%, .8);
+        }
+        .title {
+          text-shadow: 0 0 1px white;
+        }
+      }
+      
+      
+      .music{
+        display: none;
+      }
+
+      .top {
+        float: right;
+      }
+    }
+  }
+}
+
+// video
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+}
+ 
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+

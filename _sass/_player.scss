@@ -1,0 +1,184 @@
+///* AUDIO PLAYER */
+///* ------------------------------------------------------------ */
+
+.audiojs {
+  background: $color;
+  color: $highlight;
+  width: $player-width;
+  font-family: monospace;
+  @include transition;
+  @include clearfix;
+  .switch {
+    display: none;
+  }
+  &.fixed {
+    position: fixed;
+    z-index: 20;
+    top: 0;
+    .switch {      
+      display: block;
+      cursor: pointer;   
+    }    
+    .progress {
+      top: 0px;
+    }
+  }
+  &.closed {
+    top: - $waveform-height - 20px;
+  }
+  &.bg-size {
+    -webkit-background-size: 100% !important;  
+    -moz-background-size: 100% !important;  
+    background-size: 100% !important;
+  }
+  
+  audio {
+    position: absolute;
+    left: -1px;
+  }
+  .play-pause {
+    margin: 0px;
+    float: left;
+    overflow: hidden;
+  }
+  p {
+    display: none;
+    width: 30px;
+    height: 30px;
+    margin: 0px;
+    cursor: pointer;
+  }
+  .play {
+    display: block;
+  }
+  .scrubber {
+    position: relative;
+    height: $waveform-height;
+    width: $waveform-width;
+    margin: 20px 0 0;
+    background: $player-bg;
+  }
+  .progress,
+  .loaded {
+    cursor: pointer;
+  }
+  .progress-wrapper {
+    max-width: $waveform-width;
+    img {
+      max-width: $waveform-width;    
+    }
+  }
+  .progress {
+    overflow: hidden;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    height: $waveform-height;
+    width: $waveform-width;
+    z-index: 1;
+  }
+  .loaded {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: $waveform-height;
+    width: $waveform-width;
+    background: transparentize(white, .98);
+  }
+  .download,
+  .time,
+  #info,
+  .switch {
+    margin: 8px;
+  }  
+  .download,
+  .time {
+    float: left
+  }
+  #info,
+  .switch {
+    float: right;
+  }
+  .error-message {
+    float: left;
+    display: none;
+    margin: 0px 10px;
+    height: 36px;
+    width: 400px;
+    overflow: hidden;
+    line-height: 36px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    -icab-text-overflow: ellipsis;
+    -khtml-text-overflow: ellipsis;
+    -moz-text-overflow: ellipsis;
+    -webkit-text-overflow: ellipsis;
+    a {
+      text-decoration: none;
+      padding-bottom: 1px;
+      white-space: wrap;
+    }
+  }
+  .play {
+    background: url("../js/audiojs/player-graphics.gif") 0px -1px no-repeat;
+  }
+  .loading {
+    background: url("../js/audiojs/player-graphics.gif") 0px -31px no-repeat;
+  }
+  .error {
+    background: url("../js/audiojs/player-graphics.gif") 0px -61px no-repeat;
+  }
+  .pause {
+    background: url("../js/audiojs/player-graphics.gif") 0px -91px no-repeat;
+  }
+  
+  #info{
+    //display: none;
+   .support-audio{
+     color: $html5Audio-color;
+   }
+   .support-flash{
+     color: $flashEmbed-color;
+   }
+  }  
+}
+
+
+#playlist{
+}  
+
+
+
+.playing {
+  .play, .loading, .error {
+    display: none;
+  }
+  .pause {
+    display: block;
+  }
+}
+
+.loading {
+  .play, .pause, .error {
+    display: none;
+  }
+  .loading {
+    display: block;
+  }
+}
+
+.error {
+  .time, .play, .pause, .scrubber, .loading {
+    display: none;
+  }
+  .error {
+    display: block;
+  }
+  .play-pause p {
+    cursor: pointer;
+  }
+  .error-message {
+    display: block;
+  }
+}

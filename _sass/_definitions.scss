@@ -1,0 +1,22 @@
+/////////////////////////////
+$pattern:                   'patternInv.png';
+$color:                     #171717;
+$font-color:                lighten(invert($color), 0);
+
+$unit:                      32px;
+
+$highlight:                 lime;
+
+$font-size:                 $unit - 6;
+$small-font:                $unit - 5;
+
+
+
+
+
+$player-width:              500px;
+$html5Audio-color:          #0092BF;
+$flashEmbed-color:          #D41920;
+$player-bg:                 url('player.png') repeat 0 0 transparent;
+$waveform-height:           80px;
+$waveform-width:            $player-width;

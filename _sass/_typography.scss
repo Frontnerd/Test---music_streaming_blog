@@ -1,0 +1,46 @@
+body{
+  color: $font-color;
+  font-family: Arial, sans-serif;
+  font-size: $font-size;
+  line-height: 1;
+  
+  @media screen and (max-width: 500px) {
+    //font-size: $small-font;
+  }
+  
+  a{
+    color: $font-color;
+    text-decoration: none;
+    &:hover{
+      color: $highlight;
+      @include transition;
+    }
+  }     
+}
+
+$s: 1;
+@while $s < 7{
+  h#{$s}{
+    font-size: $unit / $s + 4;
+    margin-bottom: $unit/4 / $s ;
+  }
+  $s: $s + 1;
+} 
+
+h1, h2, h3, h4, h5, h6{
+  text-transform: uppercase;
+}
+
+.switch,
+#info,
+.top {
+ // text-transform: uppercase;
+  padding-top: 3px;
+}
+.links,
+.switch,
+#info,
+.top,
+.date {
+  font-size: $small-font;
+}
